@@ -63,7 +63,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-9">
                     <%-- buttons go here --%>
-                    <asp:Button ID="btnSendQuotation" runat="server" CssClass="btn btn-primary" Text="Send Quotation" />
+                    <asp:Button ID="btnSendQuotation" runat="server" CssClass="btn btn-primary" Text="Send Quotation" OnClick="btnSendQuotation_Click" />
                     <asp:Button ID="btnReturn" runat="server" CausesValidation="False" CssClass="btn btn-primary" PostBackUrl="~/Default.aspx" Text="Return" />
 
                 </div>

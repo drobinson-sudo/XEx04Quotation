@@ -10,7 +10,7 @@ namespace XEx04Quotation
 {
     public partial class Default : System.Web.UI.Page
     {
-        private Quote quote;
+        //private Quote quote;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,22 +29,19 @@ namespace XEx04Quotation
                 lblDiscountAmount.Text = discountAmount.ToString("c");
                 lblTotalPrice.Text = totalPrice.ToString("c");
 
+                Quote quote = new Quote();
                 quote.SalesPrice = salesPrice;
                 quote.DiscountAmount = discountAmount;
                 quote.TotalPrice = totalPrice;
 
-                HttpContext.Current.Session["Quotation"] = quote;
+                Session["Quotation"] = quote;
                
             }   
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (IsValid)
-            {
-
-            }
-
+            Response.Redirect("~/Confirm.aspx");
         }
     }
 }
