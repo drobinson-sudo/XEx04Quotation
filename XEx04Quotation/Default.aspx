@@ -62,6 +62,7 @@
                     <asp:Button ID="btnCalculate" runat="server" Text="Calculate"
                          CssClass="btn btn-primary" OnClick="btnCalculate_Click" />
                     <%-- confirm button goes here --%>
+                    <asp:Button ID="btnConfirm" runat="server" CssClass="btn btn-primary" Text="Confirm" OnClick="btnConfirm_Click" />
                 </div>
             </div> 
             
@@ -69,6 +70,8 @@
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-11">
                     <%-- message label goes here --%>
+                    <asp:Label ID="lblMessage" runat="server" CssClass="text-info" Text="Enter price and discount amount and click Calculate."></asp:Label>
+
                 </div>
             </div>   
 

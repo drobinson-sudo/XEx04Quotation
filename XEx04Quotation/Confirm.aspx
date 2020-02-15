@@ -63,6 +63,9 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-9">
                     <%-- buttons go here --%>
+                    <asp:Button ID="btnSendQuotation" runat="server" CssClass="btn btn-primary" Text="Send Quotation" />
+                    <asp:Button ID="btnReturn" runat="server" CausesValidation="False" CssClass="btn btn-primary" PostBackUrl="~/Default.aspx" Text="Return" />
+
                 </div>
             </div> 
             
@@ -70,6 +73,8 @@
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-11">
                     <%-- message label goes here --%>
+                    <asp:Label ID="lblMessage" runat="server" CssClass="text-info" Text="Click the Send Quotation button to send the quotation via email."></asp:Label>
+
                 </div>
             </div>
 

@@ -29,5 +29,9 @@ namespace XEx04Quotation
             }   
         }
 
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
