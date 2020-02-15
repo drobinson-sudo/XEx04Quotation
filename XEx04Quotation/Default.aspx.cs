@@ -9,9 +9,7 @@ using System.Web.UI.WebControls;
 namespace XEx04Quotation
 {
     public partial class Default : System.Web.UI.Page
-    {
-        //private Quote quote;
-
+    {        
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
@@ -29,11 +27,13 @@ namespace XEx04Quotation
                 lblDiscountAmount.Text = discountAmount.ToString("c");
                 lblTotalPrice.Text = totalPrice.ToString("c");
 
+                //Create a new Quote object and assign values to its properties.
                 Quote quote = new Quote();
                 quote.SalesPrice = salesPrice;
                 quote.DiscountAmount = discountAmount;
                 quote.TotalPrice = totalPrice;
 
+                //Create and set a new session variable called "Quotation" to store the object "quote".
                 Session["Quotation"] = quote;
                
             }   
@@ -41,7 +41,14 @@ namespace XEx04Quotation
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Confirm.aspx");
+            //Cast the session object "quote" as type "Quote" and create a local object to hold its properties.
+            Quote quote = (Quote)Session["Quotation"];
+            //Check for null reference in session object
+            if(quote != null)
+            {
+                Response.Redirect("~/Confirm.aspx");
+            }
+            lblMessage.Text = "Click the Calculate Button Before You Confirm.";
         }
     }
 }
